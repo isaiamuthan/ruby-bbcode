@@ -4,12 +4,12 @@ module BBCode
 	@@tags = {
 		# tag name => [regex, replace, description, example]
 		'Bold' => [
-			/\[b\](.*?)\[\/b\]/m,
+			/\[b\](.*?)\[\/b\]/,
 			'<strong>\1</strong>',
 			'Embolden text',
 			'Look [b]here[/b]'],
 		'Italics' => [
-			/\[i\](.*?)\[\/i\]/m,
+			/\[i\](.*?)\[\/i\]/,
 			'<em>\1</em>',
 			'Italicize or emphasize text',
 			'Even my [i]cat[/i] was chasing the mailman!'],
@@ -65,6 +65,18 @@ module BBCode
 		'Definition Definition' => [
 			/\[dd\](.*?)\[\/dd\]/,
 			'<dd>\1</dd>'],
+		
+		'Quote' => [
+			/\[quote=(.*?)\](.*?)\[\/quote\]/m,
+			'<fieldset class="quote">
+	<legend>\1</legend>
+	<blockquote>\2</blockquote>
+</fieldset>'],
+		'Quote (Sourceless)' => [
+			/\[quote\](.*?)\[quote\]/m,
+			'<fieldset>
+	<blockquote>\1</blockquote>
+</fieldset>'],
 		
 		'Link' => [
 			/\[url=(.*?)\](.*?)\[\/url\]/,
