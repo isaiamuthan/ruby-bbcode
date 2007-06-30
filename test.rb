@@ -22,8 +22,11 @@ Link (automatic): http://google.com
 Image: [img]http://zoople/hochzeit.png[/img]
 Image: [img=http://zoople/hochzeit.png]
 Image (invalid): [img]http://google.com/google.img[/img]
+
+[quote=Bush]Go kill them terrists[/quote]
+[quote]Something wise.[/quote]
 eot
 
-text.bbcode_to_html!
+text.bbcode_to_html!(:enable, :unorderedlist, :quote)
 
 puts text
